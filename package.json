@@ -1,7 +1,7 @@
 {
   "name": "cyy-react-min",
   "version": "0.0.0",
-  "description": "Code from the React tutorial.",
+  "description": "minimun react+redux start template project with hot module replacement",
   "main": "server.js",
   "dependencies": {
     "classnames": "^2.2.3",
@@ -14,14 +14,17 @@
     "redux-thunk": "^2.0.1"
   },
   "devDependencies": {
+    "babel-core": "^6.4.5",
     "babel-loader": "^6.2.2",
+    "babel-plugin-react-transform": "^2.0.2",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
-    "babel-core": "^6.4.5",
     "css-loader": "^0.23.1",
     "file": "^0.2.2",
     "file-loader": "^0.8.5",
     "node-sass": "^3.4.2",
+    "react-hot-loader": "^1.3.0",
+    "react-transform-hmr": "^1.0.4",
     "redux-devtools": "^3.1.1",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
@@ -30,10 +33,10 @@
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack-server": "webpack-dev-server --hot --progress --colors",
+    "webpack-server-hot": "BABEL_ENV=hot webpack-dev-server --progress --colors --inline --hot",
+    "webpack-server": "webpack-dev-server --progress --colors --inline",
     "web-server": "http-server -p 3003 .",
-    "start": "npm run webpack-server & npm run web-server"
+    "start": "BABEL_ENV=hot npm run webpack-server-hot & npm run web-server"
   },
   "author": "cyy",
   "engines": {

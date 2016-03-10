@@ -2,13 +2,11 @@ import React from 'react'
 import { render } from 'react-dom'
 
 
-
+/* seems not needed
    if (module.hot) {
    module.hot.accept();
    }
-   
-
-
+   */
 
 
 let Main = ({title, content, changePage}) => (
@@ -22,10 +20,9 @@ let Main = ({title, content, changePage}) => (
 )
 
 
-
 let Main1 = ({title, content, changePage}) => (
   <div>
-    <p>Page1aaa: {title}</p>
+    <p>Page1:{title}</p>
     <p>Page1 content here: {content}</p>
     <button onClick={(e) =>{
       changePage(0)
@@ -42,7 +39,7 @@ class App extends React.Component{
   }
 
   changePage(page){
-   this.setState({page: page})
+    this.setState({page: page})
   }
 
   render(){
@@ -52,16 +49,11 @@ class App extends React.Component{
     else if(this.state.page ===1){
       return <Main1 title={'page1 title'} content={'page1 content'} changePage={this.changePage}/>
     }
-
-
-
   }
-
 }   
-
 
 
 render(
   <App />,
-    document.getElementById('root')
+  document.getElementById('root')
 )
