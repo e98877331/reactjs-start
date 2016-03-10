@@ -15,7 +15,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.join(__dirname, "dist"),
-    publicPath: "http://localhost:8080/dist/",
+    publicPath: "/dist/",
   },
   module:{
     loaders: [
